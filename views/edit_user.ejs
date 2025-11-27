@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <h1>Edit User</h1>
+    <form method="post" action="/control/edit/<%= encodeURIComponent(user.username) %>">
+      <p>
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" value="<%= user.username %>">
+      </p>
+      <p>
+        <label for="password">New password (leave blank to keep current):</label>
+        <input id="password" type="password" name="password">
+      </p>
+      <p>
+        <label for="adminPassword">Admin password:</label>
+        <input id="adminPassword" type="password" name="adminPassword" required>
+      </p>
+      <p>
+        <input type="submit" value="Save">
+      </p>
+    </form>
+
+    <% if (typeof virhe !== 'undefined' && virhe) { %>
+      <p style="color:red"><%= virhe %></p>
+    <% } %>
+
+    <p><a href="/control">Back to control panel</a></p>
+  </body>
+</html>

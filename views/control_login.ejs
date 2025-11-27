@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <h1>Control Panel Login</h1>
+    <p>Enter the control-panel password to manage users.</p>
+    <form method="post" action="/control">
+      <p>
+        <label for="adminPassword">Password:</label>
+        <input id="adminPassword" type="password" name="adminPassword">
+      </p>
+      <p>
+        <input type="submit" value="Enter">
+      </p>
+    </form>
+
+    <% if (typeof virhe !== 'undefined' && virhe) { %>
+      <p style="color:red"><%= virhe %></p>
+    <% } %>
+
+    <p><a href="/login">Back to login</a></p>
+  </body>
+</html>

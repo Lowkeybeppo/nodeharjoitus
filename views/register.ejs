@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1>Register</h1>
+        <form method="post" action="/register">
+            <p>
+                <label for="username">Username:</label>
+                <input id="username" type="text" name="username">
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input id="password" type="password" name="password">
+            </p>
+            <p>
+                <input type="submit" value="Register">
+            </p>
+        </form>
+
+        <% if (typeof virhe !== 'undefined' && virhe) { %>
+            <p style="color:red"><%= virhe %></p>
+        <% } %>
+
+        <p><a href="/login">Back to login</a></p>
+    </body>
+</html>
